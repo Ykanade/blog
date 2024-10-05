@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Brick Game</title>
+  </head>
+  <body>
+    <canvas id="id-canvas" width="400" height="300"></canvas>
+
+    <script>
+     let image =(path) =>{
+        let img = new Image()
+        img.src = path
+        return img
+     }
+
+     let paddle = function(){
+        let image = image("paddle.png")
+        let o={
+            x:150,
+            y:200,
+            width:100,
+        }
+        return o
+     }
+
+      let _main = function () {
+        let x = 150
+        let y = 200
+        let speed = 5
+        let leftDown = false
+        let rightDown = false
+
+        let canvas = document.querySelector("#id-canvas")
+        let ctx = canvas.getContext("2d");
+        let image = new Image()
+        image.src = "paddle.png"
+        image.onload = function () {
+          ctx.drawImage(image, x, y);
+        }
+
+        window.addEventListener("keydown", function (event) {
+          console.log(event);
+          if (event.key == "a") {
+            leftDown = true;
+          } else if (event.key == "d") {
+            rightDown = true;
+          }
+        })
+
+        window.addEventListener("keyup", function (event) {
+          console.log(event);
+          if (event.key == "a") {
+            leftDown = false;
+          } else if (event.key == "d") {
+            rightDown = false;
+          }
+        });
+
+        setInterval(function () {
+          if (leftDown) {
+            x -= speed;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(image, x, y);
+          } else if (rightDown) {
+            x += speed;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(image, x, y);
+          }
+        }, 1000 / 30);
+      };
+
+      _main()
+    </script>
+
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </body>
+</html>
