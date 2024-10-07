@@ -5,7 +5,25 @@
   <body>
     <canvas id="id-canvas" width="400" height="300"></canvas>
 
+    <div id="gitalk-container"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
     <script>
+
+const gitalk = new Gitalk({
+  clientID: 'Ov23liOr9Rgxvs5o9Zta',
+  clientSecret: '69397c6367606b8dbeff892243cde3a0e585f60c',
+  repo: 'blog',      // The repository of store comments,
+  owner: 'ykanade',
+  admin: ['ykanade'],
+  id: location.pathname,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
+
      let image =(path) =>{
         let img = new Image()
         img.src = path
