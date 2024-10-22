@@ -3,8 +3,107 @@
         Hello,kami
     </title>
     <body>
-        <img src="kami.webp" alt="">
-        <a href="brick.html">跳转</a>
+        <div class="title_flex">
+            <div>
+                <span class="home_icon">no+e</span>
+            </div>
+    
+            <div class="input_box">
+                <img class="search_icon" src="image/biligame_search_ic_gray.png" alt="">
+                <input class="search_input" placeholder="搜索" type="text"/>
+            </div>
+            <div font-size: 14px;>
+                ログイン
+            </div>
+        </div>
+
+        <img class="top_image" src="image/WechatIMG9.jpeg">
+
+        <div class="content_box">
+            <div class="left_box">
+
+            </div>
+
+            <div class="right_box">
+
+            </div>
+
+        </div>
+    
+        <div>
+            <a href="brick.html">跳转</a>
+        </div>
+    
+
+        <style>
+            body{
+                padding: 0;
+                margin: 0;
+            }
+            .title_flex {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+
+            .home_icon {
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            .search_icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .input_box{
+                border: 1px solid #ccc;
+                padding-left: 12px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-right: 12px;
+                height: 30px;
+                width: 300px;
+                align-items: center;
+                box-sizing: border-box;
+            }
+            .search_input{
+                height: 20px;
+                border: none;
+                vertical-align: top;
+                outline: none;
+            }
+
+            .top_image{
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+                object-fit: cover;
+            }
+
+            .left_box{
+                width: 30%;
+                height: 100%;
+                float: left;
+                border: #ccc 1px solid;
+                box-sizing: border-box;
+            }
+            .right_box{
+                width: 70%;
+                height: 100%;
+                float: left;
+                border: #ccc 1px solid;
+                box-sizing: border-box;
+            }
+
+            .content_box{
+                margin-top: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        </style>
         
     </body>
 
