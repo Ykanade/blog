@@ -1,0 +1,58 @@
+<!-- copy -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>博客详情</title>
+    </head>
+    <body data-id="{{blog_id}}">
+        <h1>你好 gua</h1>
+        <img src="/images/doge.gif" alt="">
+        <div>
+            <h1>博客详情</h1>
+        </div>
+        <script>
+            const log = console.log.bind(console)
+
+            const ajax = (request) => {
+                let r = new XMLHttpRequest()
+                r.open(request.method, request.url, true)
+                if (request.contentType !== undefined) {
+                    r.setRequestHeader('Content-Type', request.contentType)
+                }
+                r.onreadystatechange = () => {
+                    if (r.readyState === 4) {
+                        request.callback(r.response)
+                    }
+                }
+                if (request.method === 'GET') {
+                    r.send()
+                } else {
+                    r.send(request.data)
+                }
+            }
+
+            const blogOne = (id) => {
+                let request = {
+                    method: 'GET',
+                    url: '/api/blog/' + id,
+                    contentType: 'application/json',
+                    callback: (response) => {
+                        let blog = JSON.parse(response)
+                        log('blog in detail', blog)
+                    }
+                }
+                // log('url', request.url)
+
+                ajax(request)
+            }
+
+            const __main = () => {
+                let blogId = document.body.dataset.id
+                blogOne(blogId)
+            }
+
+            __main()
+        </script>
+    </body>
+</html>
