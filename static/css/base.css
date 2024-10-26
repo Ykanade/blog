@@ -1,0 +1,91 @@
+/* 引入 variables.css */
+@import url("variables.css");
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, Meiryo, sans-serif;
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    font-kerning: normal;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    word-wrap: break-word;
+    background-color: var(--color-background-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: 400;
+    color: inherit;
+}
+
+address, blockquote, dl, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, ol, p, pre, table, ul {
+    padding: 0;
+    margin: 0;
+}
+
+.a-link[data-v-43e40ddc] {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.items-center {
+    align-items: center !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
+button {
+    padding: 0;
+    cursor: pointer;
+}
+
+.a-icon {
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-family: "icon";
+    font-size: 1.5rem;
+    line-height: 1;
+    color: inherit;
+    vertical-align: top;
+    touch-action: manipulation;
+    background-color: initial;
+    border: none;
+    border-radius: 1em;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.a-icon--heart:before {
+    content: "";
+}
+
+.a-icon:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "icon";
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+ol, ul {
+    list-style-type: none;
+}
